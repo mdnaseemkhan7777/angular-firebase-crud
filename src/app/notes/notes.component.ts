@@ -77,8 +77,11 @@ deleteNotes(note:Note){
 }
 
 
-getAllDetails(note: Note){
-  this.noteDetails = note
+getAllDetails(row: Note){
+  this.noteObj.id = row.id;
+    this.editForm.controls['edit_title'].setValue(row.note_title);
+    this.editForm.controls['edit_description'].setValue(row.not_dec);
+    
 }
 
 
@@ -86,18 +89,18 @@ getAllDetails(note: Note){
 
 // ******************************update m kuch masla h 
 
-updateNotes(note: Note){
-  const {value} = this.editForm
-  console.log(value);
+updateNotes(){
 
-  (this.noteObj.id = ''),
-  (this.noteObj.note_title = value.edit_title),
-  (this.noteObj.not_dec = value.edit_description)
-
-  this.noteService.updateNote(note, this.noteObj).then(()=>{
-    alert("notre Updated successfully")
+  this.noteObj.note_title = this.editForm.value.edit_title;
+  this.noteObj.not_dec = this.editForm.value.edit_description;
+  console.log("update", this.noteObj)
+  
+  this.noteService.updateNote(this.noteObj, this.noteObj).then(()=>{
+    alert("note Updated successfully")
+    this.editForm.reset();
   })
-  this.editForm.reset();
+  
+  
 
 }
 

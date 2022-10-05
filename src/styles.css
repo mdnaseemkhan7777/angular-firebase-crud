@@ -1,9 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-body{
+body {
     background: rgb(226, 226, 226);
     padding-top: 20px;
 }
-.card{
+
+.card {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -12,10 +13,52 @@ body{
     background-color: #fff;
     border: 1 solid transparent;
     border-radius: 1;
-    margin-top: 30px;    
+    margin-top: 30px;
 }
 
-.card-body{
+.card-body {
     flex: 1 1 auto;
-    padding: 1.5rem ;
+    padding: 1.5rem;
+}
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.form-container {
+    display: block;
+    /* max-width: 300px; */
+    margin: auto;
+    width: 100%;
+
+    background: #eceff1;
+    padding: 48px;
+    border-radius: 16px;
+    margin-top: 5%;
+
+    
+}
+.form-container mat-form-field {
+    width: 100%;
+    
+}
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.margin-top {
+    margin-top: 16px !important;
+}
+
+.text-center {
+    text-align: center;
 }
